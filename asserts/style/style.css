@@ -1,0 +1,639 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body,html {
+width: 100%;
+height: 100vh;
+
+}
+
+body {
+    background-color: #727272;
+    padding: 1rem;
+}
+
+header{
+    display: flex;
+    justify-content: center;
+    padding-bottom: 1rem;
+}
+
+header div#head {
+    width: 100%;
+    height: 30vw;
+    background-color: rgb(56, 56, 56); 
+    
+}
+
+header div#head figure{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* grid-template-columns: repeat(6, 300px);
+    grid-template-rows: repeat(2, 300px);  */
+   
+}
+
+
+header div#head #logo {
+    padding: 3rem;
+    width: 50vw;
+}
+
+header div#head #pokedex {
+    padding: 1rem;
+    width: 20vw;
+    /* grid-column: 2;
+    grid-row: 2; */
+}
+
+/* header div#head #pokemons {
+    width: 28vw;
+    grid-column: 4;
+    grid-row: 2;
+} */
+
+main {
+    background-color: rgb(56, 56, 56);
+    width: 100%;
+    padding: 4rem;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+  
+   
+   
+    
+
+}
+
+main div.card{
+    display: flex;
+    flex-direction: column;
+    background-color: #cccc;
+    width: 20vw; 
+    height: 25vw    ;  
+    border: solid 2px black;
+}
+
+main div.card .nomecard{
+   margin: auto;
+   text-transform: uppercase;
+   font-size:  1.6vw;
+}
+
+main div.card .type{
+    margin: 0 auto;
+    text-transform: uppercase;
+    font-size: .85vw;
+ }
+
+main div.card p{
+    margin: auto;
+    text-transform: uppercase;
+ }
+
+main div.card img {
+    margin: auto;
+    width: 13vw;
+}
+
+
+
+main section#character-list{
+    /* max-width: 90%; */
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 3rem 0;
+}
+
+
+
+
+section#character-list div.card-centro img{
+    width: 20vw;
+}
+
+.card-centro{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    background-color: #27262635;
+    backdrop-filter: blur(20px);
+    box-shadow: #9741fc20 0px 2px 4px 0px, #9741fc20 0px 2px 16px 0px;
+    width: 47vw;
+    height: 40vw;
+    border-radius: .3rem;
+    padding: 3rem;
+}
+
+.info{
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    /* flex-direction: column; */
+    gap: .7rem;
+}
+
+
+.status{
+    padding: 1.2rem;
+   font-size: 1.2rem;
+    color: aliceblue;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.type-modal-div{
+    padding: 1.2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1vw;
+}
+
+.habilidade1{
+    padding-top: .5rem;
+    width: 7vw;
+    height: 2vw;
+    background-color: #ac6868;
+    color: #fff;
+    border-radius: 1rem;
+    font-weight: 500;
+    border: #000 solid 1px;
+}
+
+.habilidade2{
+    padding-top: .5rem;
+    width: 7vw;
+    height: 2vw;
+    background-color: #703b88;
+    color: #fff;
+    border-radius: 1rem;
+    font-weight: 500;
+    border: #000 solid 1px;
+}
+
+.habilidade3{
+    padding-top: .5rem;
+    width: 7vw;
+    height: 2vw;
+    background-color: #534506;
+    color: #fff;
+    border-radius: 1rem;
+    font-weight: 500;
+    border: #000 solid 1px;
+}
+
+
+
+.habilidades-div{
+    padding: 1rem;
+    display: flex;
+    gap: 1rem;
+}
+
+.botaofechar{
+    align-items: center;
+}
+
+.botao{
+    margin: auto;
+    background-color: #343341;
+    font-size: .9vw;
+    font-weight: 500;
+    color: #fff;
+    border: none;
+    outline: none;
+    padding: .53vw 1.3vw;
+    border-radius: 4px;
+ 
+}
+
+.botao:hover {
+    background: rgb(195,34,129);
+background: linear-gradient(0deg, rgba(195,34,129,1) 0%, rgba(218,37,53,1) 100%);
+}
+
+.id{
+    font-size: 1.1vw;
+}
+
+.modal-card{
+    display: none;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    /* background-color: blue; */
+    
+}
+
+
+.type{
+    font-weight: 500px;
+    -webkit-text-stroke-width: .2px;  
+    -webkit-text-stroke-color: #000;
+    padding: .7rem;
+    text-align: center;
+    border-radius: 5rem;
+    color: aliceblue;
+    width: 6vw;
+    height: 2vw;
+    border: 1px solid black;
+}
+
+.tipodiv{
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items:center ;
+    text-align: center;
+}
+
+
+
+.descricao{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 9vw;
+    height: 9vw;
+    font-size: 1vw;
+    background-color: #423e47;
+    color: #fff;
+    border: #000;
+    border-radius: 1rem;
+}
+   
+
+#div-vermais{
+    padding: 1rem;
+    display: flex;
+}
+
+.hp{
+    padding-top: 1rem;
+    text-align: center;
+    width: 6vw;
+    height: 3vw;
+    background-color: #ff0000;
+    color: #fff;
+    border-radius: 1rem;
+    font-weight: 500;
+    border: #000 solid 1px;
+}
+
+.atk{
+    padding-top: 1rem;
+    text-align: center;
+    width: 6vw;
+    height: 3vw;
+    background-color: #f08030;
+    color: #fff;
+    border-radius: 1rem;
+    font-weight: 500;
+    border: #000 solid 1px;
+}
+
+.def{
+    padding: .5rem;
+    text-align: center;
+    width: 6vw;
+    height: 3vw;
+    background-color: #f8d030;
+    color: #fff;
+    border-radius: 1rem;
+    font-weight: 500;
+    border: #000 solid 1px;
+}
+
+.s-atk{
+    padding-top: 1rem;
+    text-align: center;
+    width: 6vw;
+    height: 3vw;
+    background-color: #6890f0;
+    color: #fff;
+    border-radius: 1rem;
+    font-weight: 500;
+    border: #000 solid 1px;
+}
+
+.s-def{
+    padding-top: 1rem;
+    text-align: center;
+    width: 6vw;
+    height: 3vw;
+    background-color: #78c850;
+    color: #fff;
+    border-radius: 1rem;
+    font-weight: 500;
+    border: #000 solid 1px;
+}
+
+.speed{
+    padding-top: 1rem;
+    text-align: center;
+    width: 6vw;
+    height: 3vw;
+    background-color: #f85888;
+    color: #fff;
+    border-radius: 1rem;
+    font-weight: 500;
+    border: #000 solid 1px;
+}
+
+
+
+@media (max-width: 1200px){
+
+
+    
+    header div#head {
+        height: 50vw;
+        
+    }
+    
+    header div#head figure{
+        display: grid;
+        grid-template-columns: repeat(5, 100px);
+        grid-template-rows: repeat(2, 100px); 
+       
+    }
+    
+    
+    header div#head #logo {
+        width: 400px;
+        grid-column: 1 / 6;
+        grid-row: 1;
+    }
+    
+    header div#head #pokedex {
+        margin: 0 auto;
+        padding-bottom: 2rem;
+        width: 165px;
+        grid-column: 2 / 4;
+        grid-row: 2;
+    }
+    
+ 
+
+    
+    main div.card{
+        display: flex;
+        flex-direction: column;
+        background-color: #cccc;
+        width: 110px; 
+        height: 155px;  
+        border: solid 2px black;
+    }
+    
+    main div.card .nomecard{
+       font-size:  .8rem;
+    }
+    
+     main div.card .type{
+        font-size: .4rem;
+        padding: .3rem;
+        text-align: center;
+        border-radius: 5rem;
+        color: aliceblue;
+        width: 40px;
+        height: 20px;
+        border: 1px solid black;
+        
+     } 
+    
+    main div.card p{
+        font-size: .7rem;
+     }
+    
+    main div.card img {
+        width: 68px;
+    
+    }
+    
+    
+    
+    
+    
+    
+    section#character-list div.card-centro img{
+        padding-left: .4rem;
+        width: 150px;
+    }
+    
+    .card-centro{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 380px;
+        height: 380px;
+    }
+    
+    
+    
+    .status{
+        padding: 1.2rem;
+       font-size: 1.2rem;
+        color: aliceblue;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+    }
+    
+    .type-modal-div{
+        display: none;
+    }
+    
+    .habilidade1{
+        padding-top: .5rem;
+        width: 60px;
+        height: 40px;
+        background-color: #ac6868;
+        color: #fff;
+        border-radius: .3rem;
+        font-weight: 500;
+        border: #000 solid 1px;
+    }
+    
+    .habilidade2{
+        font-size: .1rem;
+        padding-top: .5rem;
+        width: 60px;
+        height: 40px;
+        background-color: #703b88;
+        color: #fff;
+        border-radius: .3rem;
+        font-weight: 500;
+        border: #000 solid 1px;
+    }
+
+    
+    .habilidade3{
+        font-size: 5px;
+        padding-top: .5rem;
+        width: 60px;
+        height: 40px;
+        background-color: #534506;
+        color: #fff;
+        border-radius: .3rem;
+        border: #000 solid 1px;
+    }
+    
+    
+    
+    .habilidades-div{
+        padding: 1rem;
+        display: flex;
+        gap: 1rem;
+    }
+    
+    .botaofechar{
+        align-items: center;
+    }
+    
+    .botao{
+        cursor: pointer;
+        margin: auto;
+        background-color: #343341;
+        font-size: .4rem;
+        font-weight: 500;
+        color: #fff;
+        border: none;
+        outline: none;
+        padding: 4px 5px;
+        border-radius: 4px;
+     
+    }
+    
+    .botao:hover {
+        background: rgb(195,34,129);
+    background: linear-gradient(0deg, rgba(195,34,129,1) 0%, rgba(218,37,53,1) 100%);
+    }
+    
+    
+    .modal-card{
+        display: none;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        position: fixed;
+        /* background-color: blue; */
+        
+    }
+    
+    
+    
+    .tipodiv{
+        padding: .4rem;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        align-items:center ;
+        text-align: center;
+        gap: 5px;
+    }
+    
+    
+    
+    .descricao{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 84px;
+        height: 84px;
+        font-size: 10px ;
+        background-color: #423e47;
+        color: #fff;
+        border: #000;
+        border-radius: .3rem;
+    }
+    
+
+
+    .hp{
+        padding-top: .3rem;
+        text-align: center;
+        width: 55px;
+        height: 33px;
+        background-color: #ff0000;
+        color: #fff;
+        border-radius: .3rem;
+        font-weight: 500;
+        border: #000 solid 1px;
+    }
+    
+    .atk{
+        padding-top: .3rem;
+        text-align: center;
+        width: 55px;
+        height: 33px;
+        background-color: #f08030;
+        color: #fff;
+        border-radius: .3rem;
+        font-weight: 500;
+        border: #000 solid 1px;
+    }
+    
+    .def{
+        padding-top: .3rem;
+        text-align: center;
+        width: 55px;
+        height: 33px;
+        background-color: #f8d030;
+        color: rgb(3, 3, 3);
+        border-radius: .3rem;
+        font-weight: 500;
+        border: #000 solid 1px;
+    }
+    
+    .s-atk{
+        padding-top: .3rem;
+        text-align: center;
+        width: 55px;
+        height: 33px;
+        background-color: #6890f0;
+        color: #fff;
+        border-radius: .3rem;
+        font-weight: 500;
+        border: #000 solid 1px;
+    }
+    
+    .s-def{
+        padding-top: .3rem;
+        text-align: center;
+        width: 55px;
+        height: 33px;
+        background-color: #78c850;
+        color: #000;
+        border-radius: .3rem;
+        font-weight: 500;
+        border: #000 solid 1px;
+    }
+    
+    .speed{
+        padding-top: .3rem;
+        text-align: center;
+        width: 55px;
+        height: 33px;
+        background-color: #f85888;
+        color: #fff;
+        border-radius: .3rem;
+        font-weight: 500;
+        border: #000 solid 1px;
+    }                                                                                                               
+}
